@@ -14,8 +14,10 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isAuthenticated:false,
+    drawLiveActive:false,
     user:null,
-    error:null
+    error:null,
+    selectedNumbers:[]
   },
   getters: {
     getUser(state){
@@ -26,6 +28,12 @@ export default new Vuex.Store({
     },
     getError(state){
       return state.error
+    },
+    getDrawLiveActive(state){
+      return state.drawLiveActive
+    },
+    getSelectedNumbers(state){
+      return state.selectedNumbers
     }
   },
   mutations: {
@@ -36,6 +44,12 @@ export default new Vuex.Store({
     },
     setError(state,payload){
       state.error=payload
+    },
+    toggleActive(state,payload){
+      return state.drawLiveActive=!state.drawLiveActive
+    },
+    setSelectedNumbers(state,payload){
+      state.selectedNumbers=payload
     }
   },
   actions: {
@@ -71,6 +85,7 @@ export default new Vuex.Store({
         commit('setError',error.message)
       })
     },
+  
 
     //SignOut
     signOutAction(){
@@ -82,6 +97,7 @@ export default new Vuex.Store({
         })
       })
     },
+
   },
   modules: {
   }

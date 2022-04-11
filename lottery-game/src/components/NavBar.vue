@@ -37,14 +37,21 @@
           >
             Home
           </router-link>
-          <router-view />
           <router-link
+            v-if="activelivedraw"
             to="/livedraw"
             class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
           >
+            {{ console.log(activelivedraw) }}
             LiveDraw
           </router-link>
+          <router-view />
         </div>
+      </div>
+      <div class="pr-2">
+        <Avatar
+          image="https://media.istockphoto.com/vectors/user-icon-flat-isolated-on-white-background-user-symbol-vector-vector-id1300845620?k=20&m=1300845620&s=612x612&w=0&h=f4XTZDAv7NPuZbG0habSpU0sNgECM0X7nbKzTUta3n8="
+        />
       </div>
       <button
         @click="handleLogOut"
@@ -58,14 +65,18 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import Avatar from "vue-avatar-component";
 export default {
+  components: {
+    Avatar,
+  },
   data() {
     return {
       error: "",
     };
   },
   computed: {
-    ...mapGetters(["getError"]),
+    ...mapGetters(["getError"], { activelivedraw: ["getDrawLiveActive"] }),
   },
   methods: {
     ...mapActions(["signOutAction"]),

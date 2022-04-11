@@ -75,7 +75,7 @@ export default {
       error: "",
       auth: "",
       login: false,
-      name2: "Log In",
+      name2: "Register",
       info: "Create your account now ",
     };
   },
@@ -99,7 +99,6 @@ export default {
     },
     signIn() {
       this.signUpAction({ email: this.email, password: this.password });
-      console.log("hfjfg");
     },
     signUp() {
       this.signInAction({ email: this.email, password: this.password });

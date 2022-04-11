@@ -26,7 +26,8 @@ const routes = [
     name:'LiveDraw',
     component:LiveDraw,
     meta:{
-      requiresAuth:true
+      requiresAuth:true,
+      drawLiveActive:true
     }
   }
 ]
@@ -51,7 +52,14 @@ router.beforeEach((to,from,next)=>{
       next()
     }
   }
+  else if(store.state.drawLiveActive){
+    if(to.name=='Home'){
+      next({name:LiveDraw})
+    }
+
+  }
   else next()
+  
 })
 
 
