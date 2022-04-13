@@ -98,6 +98,12 @@ export default new Vuex.Store({
       })
     },
 
+    //ToggleActiveLiveDraw Action
+    ToggleActiveLiveDraw({commit}){
+      this.commit("toggleActive")
+    }
+
+
   },
   modules: {
   }

@@ -24,7 +24,7 @@
         <div class="m-auto left-0 right-0 flex p-5 flex-wrap">
           <div class="p-5" v-for="number in pickednumbers" :key="number">
             <div
-              class="rounded-full text-xl text-white flex justify-center pt-2 pb-2 bg-lime-900 w-10 h-10 hover:animate-bounce cursor-pointer"
+              class="rounded-full text-xl text-white flex justify-center pt-2 pb-2 bg-lime-900 w-10 h-10 hover:animate-bounce"
             >
               {{ number }}
             </div>
@@ -42,7 +42,7 @@
             role="alert"
           >
             <svg
-              class="fill-current w-4 h-4 mr-2"
+              class="fill-current w-4 h-4 mr-2 hover:cursor-pointer"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
             >
@@ -62,7 +62,7 @@
           <span
             class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
           >
-            Red to Yellow
+            Place Your Bet
           </span>
         </button>
       </div>
@@ -80,6 +80,7 @@
 
 <script>
 import { mapActions, mapGetters, mapMutations } from "vuex";
+
 import NavBar from "../components/NavBar.vue";
 import router from "@/router";
 export default {

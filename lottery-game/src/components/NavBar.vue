@@ -38,11 +38,9 @@
             Home
           </router-link>
           <router-link
-            v-if="activelivedraw"
             to="/livedraw"
             class="no-underline block mt-4 sm:inline-block sm:mt-0 text-teal-lighter hover:text-white mr-4"
           >
-            {{ console.log(activelivedraw) }}
             LiveDraw
           </router-link>
           <router-view />
