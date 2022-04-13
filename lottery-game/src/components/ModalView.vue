@@ -26,9 +26,10 @@ export default {
   name: "ModalView",
   props: ["prize"],
   methods: {
+    ...mapActions(["ToggleActiveLiveDraw"]),
     handlePlayAgain() {
+      this.ToggleActiveLiveDraw;
       router.push("/");
-      this.ToggleActiveLiveDraw();
     },
   },
 };
