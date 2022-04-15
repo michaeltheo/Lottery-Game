@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Auth from '../views/Auth'
 import Home from '../views/HomeView'
 import LiveDraw from '../views/LiveDraw.vue'
+import History from '../views/History.vue'
 import store from '../store/index'
 
 Vue.use(VueRouter)
@@ -28,6 +29,14 @@ const routes = [
     meta:{
       requiresAuth:true,
     }
+  },
+  {
+    path:'/history',
+    name:'History',
+    component:History,
+    meta:{
+      requiresAuth:true,
+    }
   }
 ]
 const router = new VueRouter({
@@ -35,7 +44,6 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
 router.beforeEach((to,from,next)=>{
   if(to.meta.requiresAuth){
     if(!store.state.isAuthenticated){

@@ -4,6 +4,8 @@ import router from "./router";
 import store from "./store";
 import "./index.css";
 import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+
 
 //firebase init
 
@@ -17,7 +19,11 @@ const firebaseConfig = {
   measurementId: "G-HNF68NRWY0",
 };
 initializeApp(firebaseConfig);
+const db =getFirestore()
+// db.settings({timestamp:true})
 Vue.config.productionTip = false;
+
+export default db
 
 new Vue({
   router,

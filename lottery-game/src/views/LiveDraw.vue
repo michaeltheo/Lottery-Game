@@ -3,7 +3,11 @@
     <NavBar />
     <!-- <div>efwefwef{{ selectedNumbers }}</div> -->
     <div v-if="showModal" class="grid place-items-center h-screen">
-      <ModalView :prize="prize" :showModal="showModal" />
+      <ModalView
+        :prize="prize"
+        :winningNumbers="winningNumbers"
+        :showModal="showModal"
+      />
     </div>
     <div v-else>
       <div class="float-left w-1/2">
@@ -68,21 +72,6 @@ export default {
   },
   computed: {
     ...mapGetters({ selectedNumbers: ["getSelectedNumbers"] }),
-    CalculatePrise() {
-      switch (this.count) {
-        case 5:
-          return (this.prize = 20);
-          break;
-        case 4:
-          return (this.prize = 10);
-          break;
-        case 3:
-          return (this.prize = 5);
-          break;
-        default:
-          break;
-      }
-    },
   },
   methods: {
     ...mapActions(["ToggleActiveLiveDraw"]),
@@ -122,7 +111,7 @@ export default {
     // setTimeout(4000);
     this.handle = setInterval(() => {
       this.generateRandom();
-    }, 1000);
+    }, 1);
   },
 };
 </script>

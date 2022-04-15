@@ -107,7 +107,7 @@ export default {
   methods: {
     submitSelectedNumbers() {
       this.setSelectedNumbers(this.pickednumbers);
-      router.push(`/livedraw`);
+      router.push({ name: "LiveDraw" });
     },
     ...mapMutations(["toggleActive", "setSelectedNumbers"]),
     handleCLick(ballnubmer) {

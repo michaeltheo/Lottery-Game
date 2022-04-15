@@ -46,7 +46,7 @@ export default new Vuex.Store({
       state.error=payload
     },
     toggleActive(state,payload){
-      return state.drawLiveActive=!state.drawLiveActive
+       state.drawLiveActive=!state.drawLiveActive
     },
     setSelectedNumbers(state,payload){
       state.selectedNumbers=payload
@@ -99,8 +99,11 @@ export default new Vuex.Store({
     },
 
     //ToggleActiveLiveDraw Action
-    ToggleActiveLiveDraw({commit}){
+    ToggleActiveLiveDraw(){
       this.commit("toggleActive")
+    },
+    setSelectedNumbers({payload}){
+      this.commit('setSelectedNumbers',payload)
     }
 
 
