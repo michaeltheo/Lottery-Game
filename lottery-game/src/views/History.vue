@@ -15,6 +15,7 @@ import {
   getDoc,
   docs,
   doc,
+  getDocFromCache,
 } from "firebase/firestore";
 import { mapGetters } from "vuex";
 
@@ -26,15 +27,16 @@ export default {
     ...mapGetters(["getUser"]),
   },
   mounted() {
-    const docRef = doc(db, "bets", "PMGUqUsuZ3Fjs0diLkJv");
-    const docSnap = getDoc(docRef);
-
-    if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
+    setTimeout(() => {
+      const colRef = collection(db, "bets");
+      getDocs(colRef).then((snapshot) => {
+        let bet = [];
+        snapshot.docs.forEach((doc) => {
+          bet.push({ ...doc.data(), id: doc.id });
+        });
+        console.log(bet);
+      });
+    }, 3000);
   },
 };
 </script>
