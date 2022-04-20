@@ -1,2 +1,0 @@
-# Lottery-Game
- A small loterry  where the player should be able to create a bet of 5 numbers, from a board of 1 to 30 numbers. After the player has submitted his bet, he should be navigated to a new screen where draw process should start. Draw process should select 5 random winning numbers, in range of 1 to 30. Player should be able to see his winnings in real time. When the draw is completed, the player should be able to save his bets.
