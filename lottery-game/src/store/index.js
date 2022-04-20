@@ -9,7 +9,9 @@ import {
 } from "firebase/auth";
 import router from '@/router';
 
+
 Vue.use(Vuex)
+
 
 export default new Vuex.Store({
   state: {
@@ -40,6 +42,7 @@ export default new Vuex.Store({
     setUser(state,payload){
       state.user=payload
       state.isAuthenticated=!!state.user
+      
       router.push({name:'Home'})
     },
     setError(state,payload){
@@ -70,6 +73,7 @@ export default new Vuex.Store({
       const auth=getAuth()
       createUserWithEmailAndPassword(auth,payload.email,payload.password).then((response)=>{
         commit('setUser',response.user)
+        
       })
       .catch((error)=>{
         commit('setError',error.message)

@@ -42,7 +42,7 @@ export default {
     },
     handlegotoHistory() {
       try {
-        const docRef = addDoc(collection(db, "bets", "peos"), {
+        const docRef = addDoc(collection(db, "bets"), {
           user_id: this.getUser.uid,
           draw_numbers: this.getSelectedNumbers,
           player_bet: this.winningNumbers,

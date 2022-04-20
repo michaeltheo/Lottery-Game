@@ -4,7 +4,7 @@ import router from "./router";
 import store from "./store";
 import "./index.css";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { getFirestore,collection } from "firebase/firestore";
 
 
 //firebase init
@@ -20,8 +20,10 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const db =getFirestore()
+const colRef=collection(db,'bets')
 // db.settings({timestamp:true})
 Vue.config.productionTip = false;
+
 
 export default db
 

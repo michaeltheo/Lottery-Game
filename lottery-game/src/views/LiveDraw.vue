@@ -33,7 +33,7 @@
           :key="number"
         >
           <div
-            class="rounded-full text-xl text-white flex justify-center pt-2 pb-2 bg-slate-500 w-10 h-10 hover:animate-bounce"
+            class="rounded-full text-xl text-white flex justify-center pt-2 pb-2 w-10 h-10 hover:animate-bounce"
             :class="
               winningNumbers.includes(number) ? 'bg-lime-700' : 'bg-red-800'
             "
@@ -71,7 +71,10 @@ export default {
     ModalView,
   },
   computed: {
-    ...mapGetters({ selectedNumbers: ["getSelectedNumbers"] }),
+    ...mapGetters({
+      selectedNumbers: ["getSelectedNumbers"],
+      drawliveactive: ["getDrawLiveActive"],
+    }),
   },
   methods: {
     ...mapActions(["ToggleActiveLiveDraw"]),
@@ -93,7 +96,7 @@ export default {
               this.prize = 10;
               break;
             case 3:
-              this.prize = 10;
+              this.prize = 5;
               break;
 
             default:
@@ -108,10 +111,10 @@ export default {
     },
   },
   mounted() {
-    // setTimeout(4000);
+    setTimeout(4000);
     this.handle = setInterval(() => {
       this.generateRandom();
-    }, 1);
+    }, 1000);
   },
 };
 </script>

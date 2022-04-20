@@ -28,6 +28,13 @@ const routes = [
     component:LiveDraw,
     meta:{
       requiresAuth:true,
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.drawLiveActive){
+        next()
+      }else{
+        next({name:'Home'})
+      }
     }
   },
   {
