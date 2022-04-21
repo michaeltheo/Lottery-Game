@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "firebase": "^9.6.10"
+    "firebase": "^9.6.10",
+    "vue-session": "^1.0.0",
+    "vue-sessionstorage": "^1.0.0"
   }
 }
