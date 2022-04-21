@@ -11,7 +11,9 @@
     </div>
     <div v-else>
       <div class="float-left w-1/2">
-        <h6 class="py-10">Bet</h6>
+        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-bold">
+          Bet
+        </h6>
         <div
           class="p-3 inline-block"
           v-for="Number in winningNumbers"
@@ -26,7 +28,9 @@
       </div>
 
       <div class="float-right w-1/2">
-        <h6 class="py-10">Submitted Bet</h6>
+        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-bold">
+          Submitted Bet
+        </h6>
         <div
           class="p-3 inline-block"
           v-for="number in selectedNumbers"
