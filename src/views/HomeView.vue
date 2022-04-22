@@ -2,14 +2,13 @@
   <div>
     <NavBar />
     <div class="flex">
-      <!-- <div class="home">use is logged in {{ getUser.email }}</div> -->
-      <div class="flex-1">
-        <div class="w-3/4">
-          <div class="m-auto left-0 right-0 flex p-5 flex-wrap">
-            <div class="p-4" v-for="index in 30" :key="index">
+      <div class="flex">
+        <div class="w-1/2">
+          <div class="m-auto left-0 right-0 grid grid-cols-10 gap-15">
+            <div class="p-10" v-for="index in 30" :key="index">
               <div class="inline-flex">
                 <div
-                  class="rounded-full text-xl flex justify-center pt-2 pb-2 bg-orange-500 w-10 h-10 hover:animate-bounce cursor-pointer"
+                  class="rounded-full text-4xl flex justify-center pt-2 pb-2 bg-orange-500 hover:animate-bounce cursor-pointer"
                   @click="handleCLick(index)"
                 >
                   {{ index }}
@@ -20,9 +19,7 @@
         </div>
       </div>
       <div class="w-1/4 pt-2">
-        <span class="text-neutral-800 subpixel-antialiased font-bold"
-          >SELECTED NUMBERS</span
-        >
+        <span>SELECTED NUMBERS</span>
         <div class="m-auto left-0 right-0 flex p-5 flex-wrap">
           <div class="p-5" v-for="number in pickednumbers" :key="number">
             <div
