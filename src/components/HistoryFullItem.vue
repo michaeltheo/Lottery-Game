@@ -86,6 +86,7 @@ export default {
     handleDeleteDoc() {
       console.log(this.bet.id);
       deleteDoc(doc(db, "bets", this.bet.id));
+      this.$router.go();
     },
     // this.$router.go();
   },

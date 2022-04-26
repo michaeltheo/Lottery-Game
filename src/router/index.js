@@ -42,7 +42,7 @@ const routes = [
     name:'History',
     component:History,
     meta:{
-      requiresAuth:true,
+     
     }
   }
 ]

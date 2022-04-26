@@ -11,7 +11,7 @@
     </div>
     <div v-else>
       <div class="float-left w-1/2">
-        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-bold">
+        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-extrabold">
           Bet
         </h6>
         <div
@@ -20,7 +20,7 @@
           :key="Number"
         >
           <div
-            class="rounded-full text-xl text-black flex justify-center pt-2 pb-2 bg-orange-500 w-10 h-10 hover:animate-bounce"
+            class="rounded-full text-4xl flex justify-center w-14 h-14 leading-normal bg-orange-500 hover:animate-bounce cursor-pointer"
           >
             {{ Number }}
           </div>
@@ -28,7 +28,7 @@
       </div>
 
       <div class="float-right w-1/2">
-        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-bold">
+        <h6 class="py-10 text-neutral-800 subpixel-antialiased font-extrabold">
           Submitted Bet
         </h6>
         <div
@@ -37,7 +37,7 @@
           :key="number"
         >
           <div
-            class="rounded-full text-xl text-white flex justify-center pt-2 pb-2 w-10 h-10 hover:animate-bounce"
+            class="rounded-full text-4xl flex text-white justify-center w-14 h-14 leading-normal hover:animate-bounce cursor-pointer"
             :class="
               winningNumbers.includes(number) ? 'bg-lime-700' : 'bg-red-800'
             "

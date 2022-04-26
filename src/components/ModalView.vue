@@ -12,6 +12,7 @@
       >
         Play Again
       </button>
+
       <button
         @click="handlegotoHistory"
         class="justify-center p-4 rounded-lg bg-slate-300 m-2"
@@ -27,7 +28,6 @@ import router from "@/router";
 import { mapActions, mapGetters } from "vuex";
 import db from "@/main";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { Timestamp } from "@firebase/firestore";
 export default {
   name: "ModalView",
   props: ["prize", "winningNumbers"],
